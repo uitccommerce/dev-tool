@@ -1,0 +1,25 @@
+<?php
+
+namespace Uitccommerce\{Module}\Models;
+
+use Uitccommerce\Base\Casts\SafeContent;
+use Uitccommerce\Base\Enums\BaseStatusEnum;
+use Uitccommerce\Base\Models\BaseModel;
+
+/**
+ * @method static \Uitccommerce\Base\Models\BaseQueryBuilder<static> query()
+ */
+class {Name} extends BaseModel
+{
+    protected $table = '{names}';
+
+    protected $fillable = [
+        'name',
+        'status',
+    ];
+
+    protected $casts = [
+        'status' => BaseStatusEnum::class,
+        'name' => SafeContent::class,
+    ];
+}
